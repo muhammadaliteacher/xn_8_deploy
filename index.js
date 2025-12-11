@@ -9,6 +9,12 @@ const PORT = process.env.PORT || 3000
 app.use(express.json())
 app.use(cors())
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Salom bolalar!"
+  })
+})
+
 // router
 app.use(dataRouter)
 app.use(authRouter)
